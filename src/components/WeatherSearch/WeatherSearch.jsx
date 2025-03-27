@@ -5,15 +5,14 @@ const WeatherSearch = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // refresh only certain part 
-        // TODO: call the service 'show' function here 
-        // clear from input 
+        props.fetchData(city);
         setCity('');
     };
 
     return (
         <section>
             <h2>Search</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor="city">Enter a city: </label>
                 <input
                   id="city" 
